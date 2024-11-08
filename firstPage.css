@@ -1,37 +1,37 @@
-body{
+body {
     padding: 2rem;
     width: 100%;
     min-height: 100vh;
     display: flex;
-    /* background-image: linear-gradient(to right bottom, #cffafe, #22d3ee); */
-    /* background-image: linear-gradient(to right bottom, #016c8b, #003769); */
-    background-image: url('Pages/Assets/bg.gif'); 
+    background-image: url('Pages/Assets/bg.gif');
     background-size: cover;
+    background-position: center;
+    transition: background-image 0.3s ease-in-out;
 }
 
 body.hovered {
-    /* background-image: linear-gradient(to left bottom, #fea0ff, #dac9fe); */
     background-image: url('Pages/Assets/wall6.gif');
-    background-position: 0%;
+    background-position: center;
     background-size: auto;
 }
 
-.container{
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 600px;
+    max-width: 90vw; /* Adjust container width for small screens */
     margin-inline: auto;
     filter: drop-shadow(5px 5px 20px rgba(0, 0, 0, 0.2));
+    text-align: center; /* Center content */
 }
 
-.btn{
+.btn {
     position: absolute;
     top: calc(100% - 10rem);
     min-width: 120px;
-    padding: 0.75rem 1rem;
-    font-size: 1.25rem;
+    padding: 1rem 2rem; /* Increase padding for larger clickable area */
+    font-size: 1.5rem; /* Make button text larger */
     outline: none;
     border: none;
     background-color: #455566;
@@ -42,13 +42,12 @@ body.hovered {
     color: #fff;
 }
 
-
 .btn:hover span {
-    display:none
+    display: none;
 }
-  
+
 .btn:hover:before {
-    content:"Hiiiii Cutieee \1F49E ";
+    content: "Hiiiii Cutieee \1F49E ";
 }
 
 .watermark {
@@ -56,10 +55,47 @@ body.hovered {
     color: rgb(238, 203, 203);
     position: fixed;
     top: 95%;
-    left: 47%;
+    left: 50%;
+    transform: translateX(-50%); /* Center the watermark */
 }
 
-a{
+a {
     text-decoration: none;
     color: rgb(238, 203, 203);
+}
+
+/* Media Queries for responsiveness */
+
+/* For tablets and smaller screens */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem; /* Reduce padding for smaller screens */
+    }
+
+    .container {
+        max-width: 90%; /* More flexible container width */
+    }
+
+    .btn {
+        font-size: 1.25rem; /* Slightly smaller button text */
+        min-width: 100px;
+        padding: 1rem 1.5rem; /* Adjust padding */
+    }
+}
+
+/* For very small screens like mobile */
+@media (max-width: 480px) {
+    body {
+        padding: 0.5rem; /* Minimal padding for very small screens */
+    }
+
+    .container {
+        max-width: 80%; /* Ensure the container is not too wide */
+    }
+
+    .btn {
+        font-size: 1rem; /* Smaller button text */
+        min-width: 80px; /* Smaller button */
+        padding: 0.75rem 1rem; /* Smaller padding */
+    }
 }
