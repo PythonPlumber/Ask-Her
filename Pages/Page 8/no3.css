@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,38 +6,36 @@
 
 body {
     background: #110515;
-	height: 100vh;
+    height: 100vh;
     overflow: hidden;
-    /* background-image: url('\\Assets\\wall2.jpg');
-    background-size: cover; */
 }
 
-.circle{
+.circle {
     position: absolute;
     bottom: 0;
-    width: 20px;
+    width: 10vw; /* Relative width */
     aspect-ratio: 1/1;
     background: rgb(249, 206, 247);
-    box-shadow: 0 0 10px rgb(230, 0, 255), 0 0 20px rgb(218, 27, 221),0 0 30px rgb(216, 34, 244),0 0 40px rgb(209, 110, 228),0 0 50px;
-    border-radius: 30%;
+    box-shadow: 0 0 10px rgb(230, 0, 255), 0 0 20px rgb(218, 27, 221), 0 0 30px rgb(216, 34, 244), 0 0 40px rgb(209, 110, 228), 0 0 50px;
+    border-radius: 50%;
     animation: animate 5s linear forwards;
 }
 
-@keyframes animate{
-    0%{
+@keyframes animate {
+    0% {
         transform: translateY(0) rotate(-25deg);
         opacity: 1;
     }
-    50%{
+    50% {
         opacity: 1;
     }
-    100%{
+    100% {
         transform: translateY(-100vh) rotate(25deg);
         opacity: 0;
     }
 }
 
-.circle::before{
+.circle::before {
     content: '';
     position: absolute;
     top: 100%;
@@ -47,25 +45,26 @@ body {
     opacity: 0.5;
 }
 
-h1{  
+h1 {
     margin: 5rem 0 0;
     padding-bottom: 0;
     display: flex;
     justify-content: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: whitesmoke;
+    font-size: 4vw; /* Responsive font size */
 }
 
-.red{
+.red {
     color: red;
     font-size: 3rem;
     font-family: cursive;
 }
 
-img{
-    margin-top:0;
+img {
+    margin-top: 0;
     padding-top: 1rem;
-    height: 500px;
+    height: 50vh; /* Responsive image height */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -76,18 +75,18 @@ img{
 .buttons {
     display: flex;
     justify-content: center;
-    margin-top: 29rem;
+    margin-top: 20vh; /* Responsive margin */
     padding-top: 2rem;
-    gap: 12rem;
+    gap: 5vw; /* Responsive gap */
 }
 
-.btn{
+.btn {
     display: inline-block;
     position: relative;
     top: calc(100% - 10rem);
     min-width: 120px;
     margin: 4px 2px;
-    font-size: 1.25rem;
+    font-size: 1.5rem; /* Responsive font size */
     outline: none;
     border: none;
     border-radius: 5px;
@@ -99,20 +98,20 @@ img{
     z-index: 1000;
 }
 
-#yes{
+#yes {
     background-color: rgb(237, 16, 64);
 }
 
 #no:hover span {
-    display:none
+    display: none;
 }
 
 #no:hover:before {
-    content:"Uff, You Girls 😑";
+    content: "Uff, You Girls 😑";
 }
 
 body.noo {
-    background-image: linear-gradient(0.25turn, #100716, #0e031f, #031d17,#250212, #181802);
+    background-image: linear-gradient(0.25turn, #100716, #0e031f, #031d17, #250212, #181802);
 }
 
 .watermark {
@@ -120,10 +119,58 @@ body.noo {
     color: rgb(243, 214, 214);
     position: fixed;
     top: 95%;
-    left: 47%;
+    left: 50%;
+    transform: translateX(-50%); /* Center the watermark */
 }
 
-a{
+a {
     text-decoration: none;
     color: rgb(243, 214, 214);
+}
+
+/* Media Queries for smaller devices */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 6vw; /* Larger text for smaller screens */
+    }
+
+    .circle {
+        width: 12vw; /* Larger circle on smaller screens */
+    }
+
+    img {
+        height: 40vh; /* Adjust image height for smaller screens */
+    }
+
+    .buttons {
+        margin-top: 25vh; /* Adjust button margin */
+        gap: 4vw; /* Smaller gap between buttons */
+    }
+
+    .btn {
+        font-size: 2rem; /* Larger button text */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 8vw; /* Very large text for small screens */
+    }
+
+    .circle {
+        width: 15vw; /* Even larger circle for very small screens */
+    }
+
+    img {
+        height: 35vh; /* Smaller image height */
+    }
+
+    .buttons {
+        margin-top: 30vh; /* More space for buttons */
+        gap: 3vw; /* Smaller gap between buttons */
+    }
+
+    .btn {
+        font-size: 2.5rem; /* Larger button text for very small screens */
+    }
 }
