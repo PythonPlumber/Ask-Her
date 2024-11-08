@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,18 +10,30 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <div class="container">
-        <img src="../Assets/hug.gif">
-        <br>
-        <h1>I love youuuuu <br>tooooooo!</h1>
-            <div class="heart"></div>   
+
+<body class="d-flex justify-content-center align-items-center bg-dark text-light" style="height: 100vh;">
+
+    <!-- Container for centered content -->
+    <div class="container text-center">
+        <!-- Image at the top -->
+        <img src="../Assets/hug.gif" class="img-fluid" alt="Hug animation">
+        
+        <!-- "I love you" part under the image -->
+        <h1 class="mt-4">I love youuuuu <br>tooooooo!</h1>
+        
+        <!-- Heart animation (optional) -->
+        <div class="heart"></div>   
     </div>
-    <div class="watermark">
-       BY Senuka
+
+    <!-- Watermark at the bottom -->
+    <div class="watermark text-center position-fixed bottom-0 w-100" style="opacity: 0.5;">
+        BY Senuka
     </div>
-    <script src="yes_anime.js" ></script>
+
+    <script src="yes_anime.js"></script>
     <script src="yes.js"></script>
 </body>
+
 </html>
