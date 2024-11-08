@@ -1,9 +1,11 @@
+/* Global Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Container Styling */
 .container {
     position: absolute;
     top: 0;
@@ -17,13 +19,22 @@
     overflow: hidden;
 }
 
+/* Image Styling */
 img {
     z-index: 1000;
-    padding-right: 5rem;
     max-width: 90%;
     height: auto;
+    padding-right: 5rem;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
 }
 
+/* Hover effect for Image */
+img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Heading Styling */
 h1 {
     color: aliceblue;
     text-align: center;
@@ -33,8 +44,10 @@ h1 {
     font-weight: 400;
     font-style: normal;
     margin: 1rem;
+    animation: fadeIn 2s ease-out; /* Added fade-in effect */
 }
 
+/* Heart Styling */
 .heart {
     position: absolute;
     width: 40px;
@@ -42,32 +55,31 @@ h1 {
     background: #e80202;
     transform: rotate(45deg);
     box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.2);
+    animation: heartbeat 1.5s infinite; /* Added heartbeat animation */
 }
 
-.heart:before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #e80202;
-    border-radius: 50%;
-    box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.1);
-}
-
+.heart:before,
 .heart:after {
     content: '';
     position: absolute;
-    top: 0;
-    left: -50%;
     width: 100%;
     height: 100%;
     background: #e80202;
     border-radius: 50%;
-    box-shadow: -20px 0 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
 }
 
+.heart:before {
+    top: -50%;
+    left: 0;
+}
+
+.heart:after {
+    top: 0;
+    left: -50%;
+}
+
+/* Watermark Styling */
 .watermark {
     opacity: 0.5;
     color: black;
@@ -76,11 +88,37 @@ h1 {
     left: 50%;
     transform: translateX(-50%);
     font-size: 0.75rem;
+    text-align: center;
 }
 
 a {
     text-decoration: none;
     color: black;
+}
+
+/* Fade-in Animation for Heading */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Heartbeat Animation */
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 /* Responsive Adjustments */
