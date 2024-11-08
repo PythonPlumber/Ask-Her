@@ -1,20 +1,24 @@
 body {
-	height: 100vh;
+    height: 100vh;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
 }
 
-h1{  
+h1 {
     margin: 5rem 0 0;
     padding-bottom: 0;
-    display: flex;
-    justify-content: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #111;
+    font-size: 2rem;
+    text-align: center;
 }
 
-img{
-    margin-top:0;
-    height: 400px;
+img {
+    height: 300px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -22,73 +26,85 @@ img{
 }
 
 .buttons {
-    font-size: 35px;
+    font-size: 1.75rem;
     display: flex;
     justify-content: center;
-    margin-top: 29rem;
-    padding-top: 2rem;
-    gap: 12rem;
+    margin-top: 20rem;
+    gap: 5rem;
+    flex-wrap: wrap;
 }
 
-.romantic1{
-    margin: 0;
+.romantic1, .romantic2, .romantic3, .romantic4, .romantic5, .romantic6, .romantic7 {
     position: absolute;
-    top: 5%;
-    left: 85%;
     transform: translate(-50%, -50%);
+    font-size: 1.25rem;
 }
-.romantic2{
-    margin: 0;
-    position: absolute;
-    top: 15%;
-    left: 15%;
-    transform: translate(-50%, -50%);
-}
-.romantic3{
-    margin: 0;
-    position: absolute;
-    top: 35%;
-    left: 71%;
-    transform: translate(-50%, -50%);
-}
-.romantic4{
-    margin: 0;
-    position: absolute;
-    top: 45%;
-    left: 25%;
-    transform: translate(-50%, -50%);
-}
-.romantic5{
-    margin: 0;
-    position: absolute;
-    top: 79%;
-    left: 79%;
-    transform: translate(-50%, -50%);
-}
-.romantic6{
-    margin: 0;
-    position: absolute;
-    top: 75%;
-    left: 10%;
-    transform: translate(-50%, -50%);
-}
-.romantic7{
-    margin: 0;
-    position: absolute;
-    top: 95%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+
+.romantic1 { top: 5%; left: 85%; }
+.romantic2 { top: 15%; left: 15%; }
+.romantic3 { top: 35%; left: 71%; }
+.romantic4 { top: 45%; left: 25%; }
+.romantic5 { top: 79%; left: 79%; }
+.romantic6 { top: 75%; left: 10%; }
+.romantic7 { top: 95%; left: 50%; }
 
 .watermark {
     opacity: 0.5;
-    color: BLACK;
+    color: black;
     position: fixed;
-    top: 97%;
-    left: 47%;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
 }
 
-a{
+a {
     text-decoration: none;
     color: black;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+        margin: 2rem 0;
+    }
+
+    img {
+        height: 200px;
+    }
+
+    .buttons {
+        font-size: 1.25rem;
+        gap: 2rem;
+        margin-top: 10rem;
+        padding: 0 1rem;
+    }
+
+    .romantic1, .romantic2, .romantic3, .romantic4, .romantic5, .romantic6, .romantic7 {
+        font-size: 1rem;
+    }
+
+    .watermark {
+        font-size: 0.7rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    img {
+        height: 400px;
+    }
+
+    .buttons {
+        font-size: 2rem;
+        gap: 8rem;
+    }
+
+    .romantic1, .romantic2, .romantic3, .romantic4, .romantic5, .romantic6, .romantic7 {
+        font-size: 1.5rem;
+    }
 }
