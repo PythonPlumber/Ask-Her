@@ -1,49 +1,50 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;   
+    box-sizing: border-box;
 }
 
-.container
-{
+.container {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    display:flex ;
+    display: flex;
     justify-content: center;
     align-items: center;
     background: #e80202;
-    overflow: hidden ;
+    overflow: hidden;
 }
 
-img{
+img {
     z-index: 1000;
     padding-right: 5rem;
+    max-width: 90%;
+    height: auto;
 }
 
-h1{
+h1 {
     color: aliceblue;
     text-align: center;
-    font-size: 4em;
+    font-size: 3rem;
     z-index: 1000;
     font-family: "Love Ya Like A Sister", cursive;
     font-weight: 400;
     font-style: normal;
+    margin: 1rem;
 }
 
-
-.heart{
+.heart {
     position: absolute;
     width: 40px;
     height: 40px;
     background: #e80202;
     transform: rotate(45deg);
-    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.2) ;
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.2);
 }
 
-.heart:before{
+.heart:before {
     content: '';
     position: absolute;
     top: -50%;
@@ -52,30 +53,63 @@ h1{
     height: 100%;
     background: #e80202;
     border-radius: 50%;
-    box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.1) ;
+    box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.1);
 }
 
-.heart:after{
+.heart:after {
     content: '';
     position: absolute;
     top: 0;
     left: -50%;
     width: 100%;
     height: 100%;
-    background: #e80202 ;
+    background: #e80202;
     border-radius: 50%;
-    box-shadow: -20px 0 40px rgba(0, 0, 0, 0.1) ;
+    box-shadow: -20px 0 40px rgba(0, 0, 0, 0.1);
 }
 
 .watermark {
     opacity: 0.5;
-    color: BLACK;
+    color: black;
     position: fixed;
-    top: 95%;
-    left: 45%;
+    bottom: 1%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
 }
 
-a{
+a {
     text-decoration: none;
     color: black;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    img {
+        padding-right: 2rem;
+    }
+
+    .heart {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    img {
+        padding-right: 1rem;
+    }
+
+    .heart {
+        width: 25px;
+        height: 25px;
+    }
 }
